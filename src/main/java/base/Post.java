@@ -7,6 +7,9 @@ import java.util.Date;
 
 @Entity
 @Table(name = "PostTable")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="ptype", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue("post")
 public class Post implements Serializable, Comparable<Post> {
 
     @Id

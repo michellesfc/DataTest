@@ -22,11 +22,12 @@ public class Controller {
         return postRepository.findOne(id);
     }
     
+    /*
     @PostMapping
     public Post create(@RequestBody Post input) {
         SignedOnUser user = new SignedOnUser("Michelle","G");
         return postRepository.save(new Post(user, input.getMessage()));
-    }
+    }*/
 
 
     @DeleteMapping("{id}")
@@ -60,13 +61,13 @@ public class Controller {
         return postRepository.save(new Post(user, "fdsfdsgsgfdgdfgd Smihfghgfhfghgfhfghfghfgth"));
     }
 
-    /*
+    
     //this is for testing
     @RequestMapping("/makenpost")
     public Post testPost1() {
         SignedOnUser user = new SignedOnUser("Michelle","G");
         String[] tags = {"student", "pro"};
         return postRepository.save(new NewsfeedPost(user, "fdsfdfgth", tags));
-    }*/
+    }
 }
 
