@@ -7,28 +7,27 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/posts")
 public class Controller {
+
     @Autowired
-    PostRepository postRepository;
+    ContentDatabase postRepository;
+
+    @Autowired
+    private ContentController contentController;
 
     @GetMapping
-    public ArrayList<Post> listAll() {
-        ArrayList<Post> posts = new ArrayList<>();
-        postRepository.findAll().forEach(post -> posts.add(post));
-        return posts;
+    public ArrayList<Post> handleGetAll() {
+        return contentController.getAllPosts();
     }
-
-    @GetMapping("{id}")
-    public Post find(@PathVariable Long id) {
-        return postRepository.findOne(id);
-    }
-    
     
     @PostMapping
-    public Post create(@RequestBody Post input) {
-        SignedOnUser user = new SignedOnUser("Michelle","G");
-        return postRepository.save(new Post(user, input.getMessage()));
+    public Post handleNewPostRequest(@RequestBody NewsfeedPost input) {
+        User user = new User("John Doe","jdoe@calpoly.edu");
+        NewsfeedPost np = new NewsfeedPost(user, input.getMessage(), input.getTags());
+        if(!contentController.newPost(np)) { //if new post could not be made null is returned
+            np = null;
+        };
+        return np;
     }
-
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
@@ -37,37 +36,20 @@ public class Controller {
 
     @DeleteMapping
     public void deleteAll() {
-        for (Post post : postRepository.findAll()) {
-            postRepository.delete(post);
-        }
+        postRepository.deleteAll();
     }
 
     @PutMapping("{id}")
-    public Post update(@PathVariable Long id, @RequestBody Post input) {
-        Post post = postRepository.findOne(id);
+    public Post update(@PathVariable Long id, @RequestBody NewsfeedPost input) {
+        NewsfeedPost post = (NewsfeedPost)postRepository.findOne(id);
         if (post == null) {
             return null;
         } else {
             post.setMessage(input.getMessage());
             post.setLikes(input.getLikes());
+            post.setTags(input.getTags());
             return postRepository.save(post);
         }
-    }
-
-    //this is for testing
-    @RequestMapping("/makepost")
-    public Post testPost() {
-        SignedOnUser user = new SignedOnUser("Michelle","G");
-        return postRepository.save(new Post(user, "fdsfdsgsgfdgdfgd Smihfghgfhfghgfhfghfghfgth"));
-    }
-
-    
-    //this is for testing
-    @RequestMapping("/makenpost")
-    public Post testPost1() {
-        SignedOnUser user = new SignedOnUser("Michelle","G");
-        String[] tags = {"student", "pro"};
-        return postRepository.save(new NewsfeedPost(user, "fdsfdfgth", tags));
     }
 }
 

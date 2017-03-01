@@ -15,28 +15,24 @@ public class Post implements Serializable, Comparable<Post> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "timestamp")
-    private String timestamp;
-    @Column(name = "author")
-    private SignedOnUser author;
-    @Column(name = "message")
+    private String timeStamp;
+    private User author;
     private String message;
-    @Column(name = "likes")
     private int likes;
 
     public Post() {
 
     }
 
-    public Post(SignedOnUser author, String message) {
+    public Post(User author, String message) {
         this.author = author;
         this.message = message;
-        this.timestamp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date());
+        this.timeStamp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date());
         this.likes = 0;
     }
 
-    public String getTimestamp() {
-    	return timestamp;
+    public String getTimeStamp() {
+    	return timeStamp;
     }
     
     public String getMessage() {
@@ -47,7 +43,7 @@ public class Post implements Serializable, Comparable<Post> {
         this.message = message;
     }
 
-    public SignedOnUser getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
@@ -69,11 +65,7 @@ public class Post implements Serializable, Comparable<Post> {
 
     @Override
 	public int compareTo(Post o) {
-		return timestamp.compareTo(o.getTimestamp());
+		return timeStamp.compareTo(o.getTimeStamp());
 	}
 
-    @Override
-    public String toString() {
-        return String.format("Post[id=%d, message='%s']", id, message);
-    }
 }
