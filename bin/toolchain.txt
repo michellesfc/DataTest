@@ -1,0 +1,29 @@
+IDE: 
+Eclipse
+IntelliJ
+
+UML Drawing: 
+http://draw.io
+BOUML (code generation)
+StarUML
+
+Version control: 
+git and github
+
+Project management: 
+waffle.io
+taiga.io
+Jira (too expensive)
+version one
+ZenHub
+
+Prototyping: 
+framer
+figma (free)
+wirefy
+invision
+marvel prototype
+vectr
+proto.io
+
+HTTP API testing: Postman
