@@ -1,7 +1,4 @@
-base/CourseRepository.class
-base/DatabaseLoader.class
-base/HomeController.class
-base/CourseApiController.class
-base/Course.class
+base/Controller.class
+base/CustomerRepository.class
+base/Customer.class
 base/Application.class
-base/InMemoryCourseRepositoy.class
