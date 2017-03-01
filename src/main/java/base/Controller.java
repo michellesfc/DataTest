@@ -22,12 +22,12 @@ public class Controller {
         return postRepository.findOne(id);
     }
     
-    /*
+    
     @PostMapping
     public Post create(@RequestBody Post input) {
         SignedOnUser user = new SignedOnUser("Michelle","G");
         return postRepository.save(new Post(user, input.getMessage()));
-    }*/
+    }
 
 
     @DeleteMapping("{id}")
