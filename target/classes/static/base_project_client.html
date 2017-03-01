@@ -1,97 +1,84 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+	integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
 <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+	integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+	integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	crossorigin="anonymous"></script>
 
 <div class="container mb-5">
-  <!-- Content here -->
-  <div class="row">
-    <table id="courseTable" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Prefix</th>
-          <th>Number</th>
-          <th>Title</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Empty Table to Hold Data-->
-      </tbody>
-    </table>
-  </div>
-  <button id="getCourses" class="btn btn-primary mt-1">Load Courses</button>
+	<!-- Content here -->
+	<div class="row">
+		<table id="courseTable" class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Prefix</th>
+					<th>Number</th>
+					<th>Title</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Empty Table -->
+
+			</tbody>
+		</table>
+	</div>
+	<button id="getCourses" class="btn btn-primary mt-1">Load
+		Courses</button>
 </div>
 
 
 <div class="container mt-3">
-<form>
-  <div class="form-group row">
-    <label for="prefix-input" class="col-2 col-form-label">Prefix</label>
-    <div class="col-3">
-      <input class="form-control" type="text" id="prefix-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="number-input" class="col-2 col-form-label">Number</label>
-    <div class="col-3">
-      <input class="form-control" type="text" id="number-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="title-input" class="col-2 col-form-label">Title</label>
-    <div class="col-6">
-      <input class="form-control" type="text" id="title-input">
-    </div>
-  </div>
-  <div class="row justify-content-md-left offset-2 mt-3">
-      <button id="deleteCourse" class="btn btn-danger ">Delete</button>
-      <button id="updateCourse"  class="btn btn-success mr-2 ml-2">Update</button>
-      <button id="createCourse"  class="btn btn-warning">Create</button>
-  </div>
-</form>
-</div>
-
-<div class="container mt-5">
-<form>
-  <div class="form-group row">
-    <label for="server-input" class="col-2 col-form-label">API Endpoint</label>
-    <div class="col-8">
-      <input class="form-control" type="text" id="server-input">
-    </div>
-    <button id="setServer" class="btn">Set</button>
-  </div>
-</form>
+	<form>
+		<div class="form-group row">
+			<label for="prefix-input" class="col-1 col-form-label">Prefix</label>
+			<div class="col-2">
+				<input class="form-control" type="text" id="prefix-input">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="number-input" class="col-1 col-form-label">Number</label>
+			<div class="col-2">
+				<input class="form-control" type="text" id="number-input">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="title-input" class="col-1 col-form-label">Title</label>
+			<div class="col-6">
+				<input class="form-control" type="text" id="title-input">
+			</div>
+		</div>
+		<div class="row justify-content-md-left offset-1 mt-5">
+			<button id="deleteCourse" class="btn btn-danger ">Delete</button>
+			<button id="updateCourse" class="btn btn-success mr-2 ml-2">Update</button>
+			<button id="createCourse" class="btn btn-warning">Create</button>
+		</div>
+	</form>
 </div>
 
 <script>
-
 $(function() {
 
   let courseStore = {};
 
   const SERVER_ROOT = "https://test-api-308.herokuapp.com/";
-  //var SERVER_ROOT = "http://localhost:8080/";
-  var COURSE_RESOURCE = "course";
-  var COURSE_API_ENDPOINT = SERVER_ROOT + COURSE_RESOURCE;
+  //const SERVER_ROOT = "http://localhost:8080/";
+  const COURSE_RESOURCE = "course";
+  const COURSE_API_ENDPOINT = SERVER_ROOT + COURSE_RESOURCE;
 
   const table = $("#courseTable tbody");
   const prefixInput = $("#prefix-input");
   const numberInput = $("#number-input");
   const titleInput = $("#title-input");
-
-  const serverInput = $("#server-input");
-
-  addClickHandlers();
-  setTableClickHandler();
-  updateServerUrl();
-
-  function updateServerUrl() {
-    serverInput.val(COURSE_API_ENDPOINT);
-  }
 
   function clearTable(){
     table.empty();
@@ -109,6 +96,9 @@ $(function() {
 
     setTableClickHandler();
   }
+
+  addClickHandlers();
+  setTableClickHandler();
 
   function setTableClickHandler() {
     $(".course-row").click(function() {
@@ -228,14 +218,6 @@ $(function() {
         console.log(msg);
       });
     });
-
-    //ServerURL input
-    $("#setServer").click(function(e){
-      e.preventDefault();
-
-      COURSE_API_ENDPOINT = serverInput.val();
-      updateServerUrl();
-    })
   }
 
 });

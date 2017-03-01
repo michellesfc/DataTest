@@ -1,4 +1,6 @@
 base/Controller.class
-base/CustomerRepository.class
-base/Customer.class
+base/HomeController.class
+base/PostRepository.class
+base/SignedOnUser.class
+base/Post.class
 base/Application.class
